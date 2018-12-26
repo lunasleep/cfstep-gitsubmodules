@@ -9,7 +9,7 @@ echo "Updating git submodules"
 
 mkdir ~/.ssh
 ssh-keyscan github.com > ~/.ssh/known_hosts
-sed -i 's/git@/https:\/\//' .gitmodules
+sed -i 's/git@/https:\/\//' .gitmodules || exit
 sed -i 's/ssh:\/\///' .gitmodules
 sed -i 's/github.com:/github.com\//' .gitmodules
 sed -i "s/https:\/\/github.com/https:\/\/$GITHUB_TOKEN@github.com/" .gitmodules
