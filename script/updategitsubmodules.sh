@@ -5,8 +5,6 @@ if [ -z "$GITHUB_TOKEN" ]; then
     exit
 fi
 
-echo "Updating git submodules"
-
 mkdir ~/.ssh
 ssh-keyscan github.com > ~/.ssh/known_hosts
 sed -i 's/git@/https:\/\//' .gitmodules || exit
@@ -19,5 +17,6 @@ if [ "$CF_SUBMODULE_SYNC" = "true" ]; then
   git submodule sync
 fi
 
+echo "Updating git submodules"
 git submodule update --init
 echo "Git submodules were updated"
