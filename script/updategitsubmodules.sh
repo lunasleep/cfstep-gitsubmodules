@@ -1,8 +1,5 @@
 #!/bin/sh
 
-echo $(pwd)
-echo $(ls)
-
 if [ -z "$GITHUB_TOKEN" ]; then
     echo "ERROR: \$GITHUB_TOKEN var is not set or empty"
     exit
