@@ -17,6 +17,12 @@ if [ "$CF_SUBMODULE_SYNC" = "true" ]; then
   git submodule sync
 fi
 
+SUBMODULE_UPDATE_RECURSIVE_FLAG=""
+if [ "$CF_SUBMODULE_UPDATE_RECURSIVE" = "true" ]; then
+  echo "\$CF_SUBMODULE_UPDATE_RECURSIVE var is set to 'true'. Submodules will be recursively updated"
+  SUBMODULE_UPDATE_RECURSIVE_FLAG=--recursive
+fi
+
 echo "Updating git submodules"
-git submodule update --init
+git submodule update --init $SUBMODULE_UPDATE_RECURSIVE_FLAG
 echo "Git submodules were updated"
