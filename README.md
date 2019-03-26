@@ -1,3 +1,5 @@
+<br>
+<img src="icon.jpg" alt="" width="210" height="110" /><br>
 # Update git submodules
 Plugin to update git submodules of an already cloned repo.
 
