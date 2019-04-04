@@ -12,7 +12,7 @@ sources:
 maintainers:
   - name: Francisco Cocozza
     email: francisco@codefresh.io
-icon: https://raw.githubusercontent.com/codefresh-plugins/cfstep-gitsubmodules/master/icon.png
+icon: https://raw.githubusercontent.com/codefresh-plugins/cfstep-gitsubmodules/master/logo.png
 envs:
     - name: GITHUB_TOKEN
       type: required
