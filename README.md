@@ -23,7 +23,7 @@ The step assumes that the working directory is the cloned repo (which is the def
 version: '1.0'
 steps:
   updateSubmodules:
-    image: codefresh/cfstep-gitsubmodules
+    image: codefreshplugins/cfstep-gitsubmodules
     environment:
       - GITHUB_TOKEN=<github_token>
       - CF_SUBMODULE_SYNC=<boolean to determine if modules should be synced>
