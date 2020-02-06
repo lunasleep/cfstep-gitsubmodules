@@ -5,12 +5,14 @@ if [ -z "$GITHUB_TOKEN" ]; then
     exit
 fi
 
-mkdir ~/.ssh
-ssh-keyscan github.com > ~/.ssh/known_hosts
-sed -i 's/git@/https:\/\//' .gitmodules || exit
-sed -i 's/ssh:\/\///' .gitmodules
-sed -i 's/github.com:/github.com\//' .gitmodules
-sed -i "s/https:\/\/github.com/https:\/\/$GITHUB_TOKEN@github.com/" .gitmodules
+cat << credentials-file >> ~/.git-credentials
+https://git:$GITHUB_TOKEN@github.com
+credentials-file
+
+cat << config-file >> ~/.gitconfig
+[credential]
+	helper = store
+config-file
 
 if [ "$CF_SUBMODULE_SYNC" = "true" ]; then
   echo "\$CF_SUBMODULE_SYNC var is set to 'true'. Syncing submodules"
